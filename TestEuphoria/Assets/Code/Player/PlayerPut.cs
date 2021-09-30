@@ -1,10 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerPut : MonoBehaviour
 {
+    #region Fields
+    #region Text
     [SerializeField] private Text cubeTxt;
     [SerializeField] private Text sphereTxt;
     [SerializeField] private Text capsuleTxt;
@@ -12,25 +12,28 @@ public class PlayerPut : MonoBehaviour
     [SerializeField] private Text cubeTxtPopUp;
     [SerializeField] private Text sphereTxtPopUp;
     [SerializeField] private Text capsuleTxtPopUp;
-
+    #endregion
+    #region Reference
     [SerializeField] private InteractiveObjectsInstantiate interactiveObj;
+    [SerializeField] private SceneController sceneController;
     [SerializeField] private GameObject popUpMenu;
     [SerializeField] private GameObject uiPanel;
-
-    [SerializeField] private SceneController sceneController;
-
+    #endregion
+    #region  NumberFields
+    [SerializeField] internal int id;
     internal int scoreCube;
     internal int scoreSphere;
     internal int scoreCapsule;
     internal int countDeactiveObjects;
+    private float distance = 5.0f;
+    #endregion
 
     internal Text[] textScore;
-    internal Test test;
+    internal FigureId figureID;
     internal GameObject targetPut;
-
-    [SerializeField] internal int id;
     private PlayerTake playerTake;
-    private float distance = 5.0f;
+
+    #endregion
 
     private void Start()
     {
@@ -43,47 +46,51 @@ public class PlayerPut : MonoBehaviour
         PutObjects();
     }
 
+    /// <summary>
+    /// Проверяем рейкастом попали ли в коллайдер с тэгом "puton".
+    /// </summary>
     private void PutObjects()
     {
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0f));
 
-        if(Physics.Raycast(ray, out hit, distance) && hit.collider.tag == "puton")
+        if(Physics.Raycast(ray, out hit, distance) && hit.collider.tag == "puton" && playerTake.isPickups)
         {
-            playerTake.popUp.SetActive(true);
-
             if(Input.GetKeyDown(KeyCode.F) && playerTake.isPickups)
             {
                 targetPut = hit.collider.gameObject;
-                test = targetPut.GetComponent<Test>();
-                id = test.figure.GetHashCode();
+
+                //Берем id фигуры в которую попал рэйкаст и присваиваем ей id
+                //в числовом эквиваленте enum'а
+                figureID = targetPut.GetComponent<FigureId>();
+                id = figureID.figure.GetHashCode();
 
                 if (id == playerTake.idObj)
                 {
+                    //Если id таблички и id фигуры совпадают, отключаем фигуру
+                    //и прибавляем очко в пользу отключенной фигуры, 
+                    //к счётчику деактивированных фигур прибавляем очко
                     playerTake.targetPickUp.gameObject.SetActive(false);
                     TextScore(id);
                     countDeactiveObjects++;
 
+
+                    //Если количество деактивированных фигур и количество застауненных
+                    //фигур на сцене совпадает
                     if(countDeactiveObjects == interactiveObj.countInteractiveObjects)
                     {
-                        
+                        //Переносим заработанные очки с таблички сверху на всплывающее окно
                         cubeTxtPopUp.text = cubeTxt.text;
                         sphereTxtPopUp.text = sphereTxt.text;
                         capsuleTxtPopUp.text = capsuleTxt.text;
 
+                        //Деактивируем верхнюю табличку и ставим игру на паузу
                         sceneController.PauseGame();
-
                         popUpMenu.SetActive(true);
-
                         uiPanel.SetActive(false);
                     }
                 }
-
             }
-        }
-        else
-        {
-            playerTake.popUp.SetActive(false);
         }
     }
 

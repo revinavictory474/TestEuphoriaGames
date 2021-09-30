@@ -1,20 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerTake : MonoBehaviour
 {
-    internal Test test;
+    #region Fields
     [SerializeField] internal int idObj;
     [SerializeField] internal GameObject popUp;
     [SerializeField] private Transform pickUpPoint;
-    internal Transform targetPickUp;
-    internal bool isPickups;
-    private float speedTransform = 5.0f;
 
+    internal FigureId figureID;
+    internal Transform targetPickUp;
+    private float speedTransform = 5.0f;
     private float distance = 5.0f;
 
-    
+    internal bool isPickups;
+    #endregion
+
     private void Update()
     {
         PickupObjects();
@@ -28,6 +28,10 @@ public class PlayerTake : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Рэйкастом проверяем куда попали, если тэг "pickup", то включаем подсказку что можно нажать на F
+    /// для действия.
+    /// </summary>
     private void PickupObjects()
     {
         RaycastHit hit;
@@ -41,8 +45,10 @@ public class PlayerTake : MonoBehaviour
             {
                 targetPickUp = hit.transform;
 
-                test = targetPickUp.GetComponent<Test>();
-                idObj = test.figure.GetHashCode();
+                //Берем id фигуры в которую попал рэйкаст и присваиваем ей id
+                //в числовом эквиваленте enum'а
+                figureID = targetPickUp.GetComponent<FigureId>();
+                idObj = figureID.figure.GetHashCode();
 
                 isPickups = true;
             }

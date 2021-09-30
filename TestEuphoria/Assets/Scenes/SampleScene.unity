@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: a49e0e84eebc4d449a053326761c07cb, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -416,7 +416,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 234274364}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2af3656f99e4b2a4d9b27ee817d4609e, type: 3}
+  m_Script: {fileID: 11500000, guid: 5cce7a91c5f35a240969b97d7779c743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   figure: 1
@@ -710,9 +710,10 @@ MonoBehaviour:
   sphereTxtPopUp: {fileID: 1687301654}
   capsuleTxtPopUp: {fileID: 1923550313}
   interactiveObj: {fileID: 1960554252}
+  sceneController: {fileID: 1960554254}
   popUpMenu: {fileID: 743654982}
   uiPanel: {fileID: 1505654418}
-  sceneController: {fileID: 1960554254}
+  popUp: {fileID: 1897644294}
   id: 0
 --- !u!1 &395818925
 GameObject:
@@ -1857,7 +1858,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1042906053}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2af3656f99e4b2a4d9b27ee817d4609e, type: 3}
+  m_Script: {fileID: 11500000, guid: 5cce7a91c5f35a240969b97d7779c743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   figure: 2
@@ -2108,7 +2109,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press "F" to pickup
+  m_Text: Press "F" to interactive
 --- !u!222 &1094651736
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2297,8 +2298,8 @@ GameObject:
   - component: {fileID: 1485038391}
   - component: {fileID: 1485038394}
   - component: {fileID: 1485038393}
-  - component: {fileID: 1485038395}
   - component: {fileID: 1485038392}
+  - component: {fileID: 1485038395}
   m_Layer: 0
   m_Name: Cube
   m_TagString: puton
@@ -2314,7 +2315,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1485038390}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.37, z: 14.5}
+  m_LocalPosition: {x: 0, y: 2.37, z: 14.753}
   m_LocalScale: {x: 4, y: 4, z: 0.1}
   m_Children: []
   m_Father: {fileID: 497895790}
@@ -2391,7 +2392,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1485038390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2af3656f99e4b2a4d9b27ee817d4609e, type: 3}
+  m_Script: {fileID: 11500000, guid: 5cce7a91c5f35a240969b97d7779c743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   figure: 0
@@ -2691,8 +2692,8 @@ GameObject:
   - component: {fileID: 1606699935}
   - component: {fileID: 1606699938}
   - component: {fileID: 1606699937}
-  - component: {fileID: 1606699939}
   - component: {fileID: 1606699936}
+  - component: {fileID: 1606699939}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: puton
@@ -2708,7 +2709,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1606699934}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.55, y: 2.37, z: 14.5}
+  m_LocalPosition: {x: 7.55, y: 2.37, z: 14.753}
   m_LocalScale: {x: 4, y: 4, z: 0.1}
   m_Children: []
   m_Father: {fileID: 497895790}
@@ -2785,7 +2786,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1606699934}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2af3656f99e4b2a4d9b27ee817d4609e, type: 3}
+  m_Script: {fileID: 11500000, guid: 5cce7a91c5f35a240969b97d7779c743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   figure: 1
@@ -2830,8 +2831,8 @@ GameObject:
   - component: {fileID: 1674649088}
   - component: {fileID: 1674649091}
   - component: {fileID: 1674649090}
-  - component: {fileID: 1674649092}
   - component: {fileID: 1674649089}
+  - component: {fileID: 1674649092}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: puton
@@ -2847,7 +2848,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1674649087}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.55, y: 2.37, z: 14.5}
+  m_LocalPosition: {x: -7.55, y: 2.37, z: 14.753}
   m_LocalScale: {x: 4, y: 4, z: 0.1}
   m_Children: []
   m_Father: {fileID: 497895790}
@@ -2924,7 +2925,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1674649087}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2af3656f99e4b2a4d9b27ee817d4609e, type: 3}
+  m_Script: {fileID: 11500000, guid: 5cce7a91c5f35a240969b97d7779c743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   figure: 2
@@ -3251,7 +3252,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1872481978}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2af3656f99e4b2a4d9b27ee817d4609e, type: 3}
+  m_Script: {fileID: 11500000, guid: 5cce7a91c5f35a240969b97d7779c743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   figure: 0

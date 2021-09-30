@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2462966735930996536}
   - component: {fileID: 153742276572811734}
   - component: {fileID: 7300659908639764708}
-  - component: {fileID: 124324877843417030}
+  - component: {fileID: 8243625700632713947}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: pickup
@@ -97,7 +97,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &124324877843417030
+--- !u!114 &8243625700632713947
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 337400221408346494}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2af3656f99e4b2a4d9b27ee817d4609e, type: 3}
+  m_Script: {fileID: 11500000, guid: 5cce7a91c5f35a240969b97d7779c743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   figure: 2

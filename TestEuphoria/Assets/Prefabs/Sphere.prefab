@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5772041544660602318}
   - component: {fileID: 5751263868444240594}
   - component: {fileID: 6014832360900553014}
-  - component: {fileID: -7472790022242417967}
+  - component: {fileID: 2391974731824552711}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: pickup
@@ -96,7 +96,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-7472790022242417967
+--- !u!114 &2391974731824552711
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,7 +105,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1601503847898701005}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2af3656f99e4b2a4d9b27ee817d4609e, type: 3}
+  m_Script: {fileID: 11500000, guid: 5cce7a91c5f35a240969b97d7779c743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   figure: 1
