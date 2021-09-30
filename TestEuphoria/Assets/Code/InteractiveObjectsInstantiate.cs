@@ -18,11 +18,6 @@ public class InteractiveObjectsInstantiate : MonoBehaviour
 
     private void InstantiateInteractiveObjects()
     {
-        //for (int i = 0; i < listInteractiveObjects.Count; i++)
-        //{
-        //    listInteractiveObjects.Add(interactiveObjects[i]);
-        //}
-
         countInteractiveObjects = Random.Range(3, listPointsInstantiate.Count);
 
         for(int i = 0; i < countInteractiveObjects; i++)
