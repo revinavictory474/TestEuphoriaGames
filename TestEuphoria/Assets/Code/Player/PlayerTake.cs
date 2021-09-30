@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PlayerTake : MonoBehaviour
 {
-    [SerializeField] private GameObject popUp;
+    internal Test test;
+    [SerializeField] internal int idObj;
+    [SerializeField] internal GameObject popUp;
     [SerializeField] private Transform pickUpPoint;
-    private Transform targetPickUp;
-    private bool isPickups;
+    internal Transform targetPickUp;
+    internal bool isPickups;
     private float speedTransform = 1.0f;
 
     private float distance = 5.0f;
@@ -31,13 +33,17 @@ public class PlayerTake : MonoBehaviour
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width/2, Screen.height/2, 0f));
 
-        if(Physics.Raycast(ray, out hit, distance) )
+        if(Physics.Raycast(ray, out hit, distance) && hit.collider.tag == "pickup")
         {
             popUp.SetActive(true);
             
-            if(hit.collider.tag == "pickup" && Input.GetKeyDown(KeyCode.F))
+            if(Input.GetKeyDown(KeyCode.F))
             {
                 targetPickUp = hit.transform;
+
+                test = targetPickUp.GetComponent<Test>();
+                idObj = test.figure.GetHashCode();
+
                 Debug.Log("2");
                 isPickups = true;
             }
