@@ -8,11 +8,19 @@ public class PlayerPut : MonoBehaviour
     [SerializeField] private Text cubeTxt;
     [SerializeField] private Text sphereTxt;
     [SerializeField] private Text capsuleTxt;
-    //[SerializeField] internal GameObject bgScore;
+
+    [SerializeField] private Text cubeTxtPopUp;
+    [SerializeField] private Text sphereTxtPopUp;
+    [SerializeField] private Text capsuleTxtPopUp;
+
+    [SerializeField] private InteractiveObjectsInstantiate interactiveObj;
+    [SerializeField] private GameObject popUpMenu;
+    [SerializeField] private GameObject uiPanel;
 
     internal int scoreCube;
     internal int scoreSphere;
     internal int scoreCapsule;
+    internal int countDeactiveObjects;
 
     internal Text[] textScore;
     internal Test test;
@@ -25,7 +33,6 @@ public class PlayerPut : MonoBehaviour
     private void Start()
     {
         playerTake = GetComponent<PlayerTake>();
-        //textScore = bgScore.GetComponentsInChildren<Text>();
     }
 
     private void Update()
@@ -52,7 +59,25 @@ public class PlayerPut : MonoBehaviour
                 {
                     playerTake.targetPickUp.gameObject.SetActive(false);
                     TextScore(id);
-                    Debug.Log("test");
+                    countDeactiveObjects++;
+
+                    if(countDeactiveObjects == interactiveObj.countInteractiveObjects)
+                    {
+                        //test
+                        cubeTxtPopUp.text = cubeTxt.text;
+                        sphereTxtPopUp.text = sphereTxt.text;
+                        capsuleTxtPopUp.text = capsuleTxt.text;
+                        //test
+
+
+
+                        popUpMenu.SetActive(true);
+
+                        
+                        
+
+                        uiPanel.SetActive(false);
+                    }
                 }
 
             }

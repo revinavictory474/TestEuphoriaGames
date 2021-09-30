@@ -44,7 +44,6 @@ public class PlayerTake : MonoBehaviour
                 test = targetPickUp.GetComponent<Test>();
                 idObj = test.figure.GetHashCode();
 
-                Debug.Log("2");
                 isPickups = true;
             }
         }

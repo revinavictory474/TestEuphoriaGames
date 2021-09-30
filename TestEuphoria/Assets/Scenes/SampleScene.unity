@@ -706,6 +706,12 @@ MonoBehaviour:
   cubeTxt: {fileID: 1872481980}
   sphereTxt: {fileID: 234274366}
   capsuleTxt: {fileID: 1042906055}
+  cubeTxtPopUp: {fileID: 124800058}
+  sphereTxtPopUp: {fileID: 1687301654}
+  capsuleTxtPopUp: {fileID: 1923550313}
+  interactiveObj: {fileID: 1960554252}
+  popUpMenu: {fileID: 743654982}
+  uiPanel: {fileID: 1505654418}
   id: 0
 --- !u!1 &395818925
 GameObject:
@@ -3531,7 +3537,6 @@ MonoBehaviour:
   - {fileID: 875507908}
   - {fileID: 1328421680}
   - {fileID: 1834067979}
-  listInteractiveObjects: []
 --- !u!4 &1960554253
 Transform:
   m_ObjectHideFlags: 0

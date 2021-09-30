@@ -6,8 +6,7 @@ public class InteractiveObjectsInstantiate : MonoBehaviour
 {
     [SerializeField] private GameObject[] interactiveObjects;
     [SerializeField] private List<GameObject> listPointsInstantiate = new List<GameObject>();
-    [SerializeField] private List<GameObject> listInteractiveObjects = new List<GameObject>();
-    private int countInteractiveObjects;
+    internal int countInteractiveObjects;
 
     private void Start()
     {
@@ -23,7 +22,7 @@ public class InteractiveObjectsInstantiate : MonoBehaviour
         for(int i = 0; i < countInteractiveObjects; i++)
         {
             int randomPosition = Random.Range(0, listPointsInstantiate.Count - 1);
-            Instantiate(interactiveObjects[Random.Range(0, 2)], listPointsInstantiate[randomPosition].transform);
+            Instantiate(interactiveObjects[Random.Range(0, 3)], listPointsInstantiate[randomPosition].transform);
             listPointsInstantiate.RemoveAt(randomPosition);
         }
     }
