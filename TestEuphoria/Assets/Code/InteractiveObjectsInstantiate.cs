@@ -26,6 +26,4 @@ public class InteractiveObjectsInstantiate : MonoBehaviour
             listPointsInstantiate.RemoveAt(randomPosition);
         }
     }
-
-
 }

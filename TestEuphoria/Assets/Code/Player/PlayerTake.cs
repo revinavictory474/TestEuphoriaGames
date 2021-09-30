@@ -10,7 +10,7 @@ public class PlayerTake : MonoBehaviour
     [SerializeField] private Transform pickUpPoint;
     internal Transform targetPickUp;
     internal bool isPickups;
-    private float speedTransform = 1.0f;
+    private float speedTransform = 5.0f;
 
     private float distance = 5.0f;
 
@@ -20,7 +20,7 @@ public class PlayerTake : MonoBehaviour
         PickupObjects();
     }
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         if(isPickups)
         {

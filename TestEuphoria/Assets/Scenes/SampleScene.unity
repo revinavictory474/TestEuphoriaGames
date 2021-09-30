@@ -712,6 +712,7 @@ MonoBehaviour:
   interactiveObj: {fileID: 1960554252}
   popUpMenu: {fileID: 743654982}
   uiPanel: {fileID: 1505654418}
+  sceneController: {fileID: 1960554254}
   id: 0
 --- !u!1 &395818925
 GameObject:
@@ -973,7 +974,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 796ea42da9ef0b841aa5bab43723d1d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1085,7 +1086,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 576800062}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1960554254}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &576800062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1152,7 +1165,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.6020826, g: 0.6226415, b: 0.62069553, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -1162,7 +1175,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.81
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -3463,7 +3476,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3dc60a8f397132a41b13527e695a8d04, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3503,6 +3516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1960554253}
   - component: {fileID: 1960554252}
+  - component: {fileID: 1960554254}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3551,6 +3565,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1960554254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960554251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7261fe6dd993b34429af7434d0056506, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2026221797
 GameObject:
   m_ObjectHideFlags: 0

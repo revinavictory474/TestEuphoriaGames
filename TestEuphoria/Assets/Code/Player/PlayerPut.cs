@@ -17,6 +17,8 @@ public class PlayerPut : MonoBehaviour
     [SerializeField] private GameObject popUpMenu;
     [SerializeField] private GameObject uiPanel;
 
+    [SerializeField] private SceneController sceneController;
+
     internal int scoreCube;
     internal int scoreSphere;
     internal int scoreCapsule;
@@ -32,6 +34,7 @@ public class PlayerPut : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         playerTake = GetComponent<PlayerTake>();
     }
 
@@ -63,18 +66,14 @@ public class PlayerPut : MonoBehaviour
 
                     if(countDeactiveObjects == interactiveObj.countInteractiveObjects)
                     {
-                        //test
+                        
                         cubeTxtPopUp.text = cubeTxt.text;
                         sphereTxtPopUp.text = sphereTxt.text;
                         capsuleTxtPopUp.text = capsuleTxt.text;
-                        //test
 
-
+                        sceneController.PauseGame();
 
                         popUpMenu.SetActive(true);
-
-                        
-                        
 
                         uiPanel.SetActive(false);
                     }
